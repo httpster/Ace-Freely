@@ -86,6 +86,7 @@ class AceFreely_AceFreelyFieldType extends BaseFieldType
 		// Include our Javascript
 		craft()->templates->includeJsResource('acefreely/ace/ace.js');
 		craft()->templates->includeJsResource('acefreely/ace.freely.js');
+		craft()->templates->includeCssResource('acefreely/ace.freely.css');
 		craft()->templates->includeJs('AceFreely.init("' . $namespacedId . '", "' . $settings->theme . '", "' . $settings->useTabs . '", "' . $settings->tabSize . '");');
 
 		return craft()->templates->render('acefreely/input', array(
