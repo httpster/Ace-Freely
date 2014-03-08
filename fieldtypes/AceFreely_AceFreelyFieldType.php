@@ -82,12 +82,13 @@ class AceFreely_AceFreelyFieldType extends BaseFieldType
 
 		// Get settings
 		$settings = $this->getSettings();
+		$useTabs = $settings->useTabs ? 1 : 0;
 
 		// Include our Javascript
 		craft()->templates->includeJsResource('acefreely/ace/ace.js');
 		craft()->templates->includeJsResource('acefreely/ace.freely.js');
 		craft()->templates->includeCssResource('acefreely/ace.freely.css');
-		craft()->templates->includeJs('AceFreely.init("' . $namespacedId . '", "' . $settings->theme . '", "' . $settings->useTabs . '", "' . $settings->tabSize . '");');
+		craft()->templates->includeJs('AceFreely.init("' . $namespacedId . '","' . $settings->theme . '",' . $useTabs . ',' . $settings->tabSize . ');');
 
 		return craft()->templates->render('acefreely/input', array(
 			'name'     => $name,

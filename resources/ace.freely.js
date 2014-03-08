@@ -16,7 +16,7 @@ var AceFreely = {
 		editor.setShowInvisibles(true);
 
 		// Are we using tabs? If so set the tab size
-		if (typeof(useTabs) === 1) {
+		if (useTabs === 1) {
 			editor.getSession().setUseSoftTabs(false);
 			editor.getSession().setTabSize(tabSize);
 		}
