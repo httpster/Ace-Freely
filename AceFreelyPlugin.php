@@ -14,28 +14,33 @@ namespace Craft;
 
 class AceFreelyPlugin extends BasePlugin
 {
+    public function getName()
+    {
+        return Craft::t('Ace Freely');
+    }
 
-	public function getName()
-	{
-		return Craft::t('Ace Freely');
-	}
+    public function getVersion()
+    {
+        return '1.0';
+    }
 
+    public function getDeveloper()
+    {
+        return 'Brandon Haslip';
+    }
 
-	public function getVersion()
-	{
-		return '0.1';
-	}
+    public function getDeveloperUrl()
+    {
+        return 'http://brandonhaslip.com';
+    }
 
+    /**
+     * Register twig extension
+     */
+    public function hookAddTwigExtension()
+    {
+        Craft::import('plugins.acefreely.twigextensions.AceFreelyTwigExtension');
 
-	public function getDeveloper()
-	{
-		return 'Brandon Haslip';
-	}
-
-
-	public function getDeveloperUrl()
-	{
-		return 'http://brandonhaslip.com';
-	}
-
+        return new AceFreelyTwigExtension();
+    }
 }

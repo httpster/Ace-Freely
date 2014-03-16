@@ -1,6 +1,6 @@
 var AceFreely = {
 
-	init: function(inputId, theme, useTabs, tabSize)
+	init: function(inputId, mode, theme, useTabs, tabSize)
 	{
 
 		// Set input variable and hide it
@@ -8,12 +8,19 @@ var AceFreely = {
 		input.hide();
 
 		// Initialize Ace Editor
+		ace.require("ace/ext/language_tools");
 		var editor = ace.edit(inputId + "Container");
 
 		// Configure Ace Editor
 		editor.setTheme("ace/theme/" + theme);
-		editor.getSession().setMode("ace/mode/twig");
+		editor.getSession().setMode("ace/mode/" + mode);
 		editor.setShowInvisibles(true);
+
+		// Enable auto completion and snippets
+		editor.setOptions({
+			enableBasicAutocompletion: true,
+			enableSnippets: true
+		});
 
 		// Are we using tabs? If so set the tab size
 		if (useTabs === 1) {
