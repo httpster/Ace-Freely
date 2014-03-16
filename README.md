@@ -14,7 +14,7 @@ There are a few different ways to use Ace Freely depending on how you want to ou
 
 #### Code Sample
 
-Wrap the fields output in a `<pre>` element to output a code sample.
+Wrap the field's value in a `<pre>` element to output a code sample.
 
 `<pre>{{ entry.aceFreelyFieldHandle }}</pre>`
 
