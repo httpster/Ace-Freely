@@ -20,18 +20,18 @@ Wrap the field's value in a `<pre>` element to output a code sample.
 
 #### HTML, CSS or JS Sample
 
-Pass HTML, CSS, or JS content through Twig's `[raw](http://twig.sensiolabs.org/doc/filters/raw.html)` filter.
+Pass HTML, CSS, or JavaScript content through Twig's [raw](http://twig.sensiolabs.org/doc/filters/raw.html) filter.
 
 `{{ entry.aceFreelyFieldHandle | raw }}`
 
 #### Markdown Sample
 
-Pass Markdown content through Craft's `[markdown](http://buildwithcraft.com/docs/templating/filters#markdown-or-md)` filter
+Pass Markdown content through Craft's [markdown](http://buildwithcraft.com/docs/templating/filters#markdown-or-md) filter
 
 `{{ entry.aceFreelyFieldHandle | markdown }}`
 
 #### Twig Sample
 
-Pass Twig content through Ace Freely's `ace_parse` filter.
+Pass Twig content through Ace Freely's ace_parse filter.
 
 `{{ entry.aceFreelyFieldHandle | ace_parse }}`
