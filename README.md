@@ -3,7 +3,7 @@
 ## An [Ace Editor](http://ace.c9.io/) field type for [Craft CMS](https://buildwithcraft.com/)
 
 ### Installation
-1. Move the files to a folder named 'acefreely' in your Craft plugins folder.
+1. Move the 'acefreely' folder into your Craft plugins folder.
 2. Go to Settings > Plugins in the Craft control panel.
 3. Install the Ace Freely plugin.
 4. You can now create Ace Freely fields from within Settings > Fields.
