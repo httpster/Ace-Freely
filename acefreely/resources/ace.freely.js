@@ -1,6 +1,6 @@
 var AceFreely = {
 
-	init: function(inputId, mode, theme, useTabs, tabSize)
+	init: function(inputId, mode, theme, useTabs, tabSize, minLines, maxLines)
 	{
 
 		// Set input variable and hide it
@@ -19,7 +19,9 @@ var AceFreely = {
 		// Enable auto completion and snippets
 		editor.setOptions({
 			enableBasicAutocompletion: true,
-			enableSnippets: true
+			enableSnippets: true,
+			minLines: minLines,
+			maxLines: maxLines
 		});
 
 		// Are we using tabs? If so set the tab size

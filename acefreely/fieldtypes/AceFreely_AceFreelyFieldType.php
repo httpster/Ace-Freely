@@ -76,7 +76,8 @@ class AceFreely_AceFreelyFieldType extends BaseFieldType
                 'vibrant_ink',
                 'xcode'
                 ), 'default' => 'chrome'),
-            'height'     => array(AttributeType::Number, 'default' => 200),
+            'minLines'     => array(AttributeType::Number, 'default' => 4),
+            'maxLines'    => array(AttributeType::Bool,   'default' => 1),
             'useTabs'    => array(AttributeType::Bool,   'default' => 1),
             'tabSize'    => array(AttributeType::Number, 'default' => 4)
         );
@@ -100,13 +101,14 @@ class AceFreely_AceFreelyFieldType extends BaseFieldType
         // Get settings
         $settings = $this->getSettings();
         $useTabs = $settings->useTabs ? 1 : 0;
+        $maxLines = $settings->maxLines ? 'Infinity' : $settings->minLines;
 
         // Include JavaScript
         craft()->templates->includeJsResource('acefreely/ace/ace.js');
         craft()->templates->includeJsResource('acefreely/ace/ext-language_tools.js');
         craft()->templates->includeJsResource('acefreely/ace.freely.min.js');
         craft()->templates->includeCssResource('acefreely/ace.freely.min.css');
-        craft()->templates->includeJs('AceFreely.init("' . $namespacedId . '","' . $settings->mode . '","' . $settings->theme . '",' . $useTabs . ',' . $settings->tabSize . ');');
+        craft()->templates->includeJs('AceFreely.init("' . $namespacedId . '","' . $settings->mode . '","' . $settings->theme . '",' . $useTabs . ',' . $settings->tabSize . ',' . $settings->minLines . ',' . $maxLines . ');');
 
         return craft()->templates->render('acefreely/input', array(
             'name'     => $name,
