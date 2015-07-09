@@ -60,14 +60,21 @@
 
 {{ forms.textField({
     label: "Height"|t,
-    instructions: "The height of the editor (output in px).",
-    id: 'height',
-    name: 'height',
-    value: settings.height,
-    size: 4,
-    errors: settings.getErrors('height')
+    instructions: "The initial height of the editor (in rows).",
+    id: 'minLines',
+    name: 'minLines',
+    value: settings.minLines,
+    size: 2,
+    errors: settings.getErrors('minLines')
 }) }}
 
+
+{{ forms.checkboxField({
+    label: "Automatically increase editor height to fit contents?"|t,
+    id: 'maxLines',
+    name: 'maxLines',
+    checked: settings.maxLines
+}) }}
 
 {{ forms.checkboxField({
     label: "Use tabs instead of spaces?"|t,
@@ -85,7 +92,7 @@
     id: 'tabSize',
     name: 'tabSize',
     value: settings.tabSize,
-    size: 1,
+    size: 2,
     errors: settings.getErrors('tabSize')
     }) }}
 </div>
